@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      vue组件利用css var(--变量)实现动态修改伪类属性（::before、::after）
+    </title>
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <style>
+      :root {
+        --main-bg-color: #eee; /* 重要（#2 配对使用） #2*/
+      }
+      .bodyCss {
+        background: var(--main-bg-color); /* 重要（#2 配对使用） #2*/
+      }
+      .bodyCss .cardBox {
+        font-size: 16px;
+        margin: 0 12px 12px 12px;
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: left;
+      }
+      .bodyCss .cardBox .titleBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .bodyCss .cardBox .titleBox .title {
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      .bodyCss .cardBox .titleBox .title::before {
+        content: "";
+        width: 3px;
+        height: 14px;
+        margin: 2px 10px 0 0;
+        display: block;
+        background: var(--bgColor); /* 重要（#1 配对使用） #1*/
+        border-radius: 2px;
+      }
+      input::placeholder{
+        color: var(--bgColor);
+      }
+      
+    </style>
+  </head>
+  <body class="bodyCss">
+    <div id="app" style="text-align: center">
+      <!-- <el-radio-group v-model="bgColor" style="margin: 30px 0">
+        <el-radio-button label="#00f">#00f</el-radio-button>
+        <el-radio-button label="#f00">#f00</el-radio-button>
+        <el-radio-button label="#ff0">#ff0</el-radio-button>
+        <el-radio-button label="#0f0">#0f0</el-radio-button>
+      </el-radio-group> -->
+      <div class="cardBox">
+        <div class="titleBox">
+          <div class="title" :style="{ '--bgColor':bgColor }">
+            1
+            <input
+              type="text"
+              :style="{ '--bgColor':bgColor }"
+              placeholder="inputinputinputinputinputinput"
+            />
+            <!-- 重要（#1 配对使用） #1 -->
+            <span :style="{color:bgColor}">动态修改伪类样式</span>
+          </div>
+          <span>></span>
+        </div>
+        <div>
+          <p>#1：</p>
+          <p>
+            我们可以利用此属性实现vue组件动态传值，修改例如：::before、::after等，伪类的背景色，背景图等属性值。
+          </p>
+          <p>
+            因为vue利用无法直接在css中使用data里的变量，利用var(--变量名),以及style中定义变量（其实此步是模仿:root{}）方能修改。
+          </p>
+          <p>
+            动态切换主题也可利用此方式实现，由后端返回图片地址，以及颜色主题。
+          </p>
+          <p>#2：</p>
+          <p>常规使用方式，但是很尴尬，人们并不喜欢这样写。</p>
+          <p>只有系统性，需要大量修改重复css属性，才会用到这个</p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://lib.baomitu.com/vue/2.6.14/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <!-- 引入 echart -->
+  <script src="https://lib.baomitu.com/echarts/5.2.0/echarts.common.js"></script>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          bgColor: "green",
+        };
+      },
+      mounted() {},
+      methods: {},
+    });
+  </script>
+</html>

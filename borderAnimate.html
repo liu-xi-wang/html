@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>地图</title>
+  </head>
+  <body>
+    <div class="bb"></div>
+    <style>
+      .bb,
+      .bb::before,
+      .bb::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .bb {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        color: #69ca62;
+        box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+        /* position: relative; */
+      }
+      .bb::before,
+      .bb::after {
+        position: absolute;
+        inset: -5%;
+        content: "";
+        display: block;
+        /* margin: 5%; */
+        /* box-shadow: inset 0 0 0 2px; */
+        border: 1px solid red;
+        /* clip-path: inset(70% 0 0 30%); */
+        /* background-color: skyblue; */
+        animation: clipMe 8s linear infinite;
+        background-color: skyblue;
+      }
+      .bb::before {
+        animation-delay: -4s;
+      }
+      @keyframes clipMe {
+        0%,
+        100% {
+          clip-path: inset(0 0 100% 0);
+        }
+        25% {
+          clip-path: inset(0 100% 0 0);
+        }
+        50% {
+          clip-path: inset(100% 0 0 0);
+        }
+        75% {
+          clip-path: inset(0 0 0 100%);
+        }
+      }
+    </style>
+  </body>
+</html>
