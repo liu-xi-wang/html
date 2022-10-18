@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+</body>
+<script>
+const asyncFunc = () => {
+  return new Promise(function(resolve, reject){
+    console.log(1, 'Do sth.')
+    setTimeout(() => {
+        console.log(2, '========');
+        // resolve('Ok.');
+        // reject('err.');
+        try {
+          throw new Error('错误了')
+        } catch (error) {
+          reject(error)
+        }
+    }, 3000);
+  })
+}
+try {
+  // asyncFunc().then(res => {
+  //   console.log('then',res)
+  // }).catch(err => {
+  //   console.log('catchthrow new Error',err)
+  // })
+} catch (error) {
+  console.log('throw new Error',error)
+}
+
+
+class Config {
+	// static appName = "microofficialsite"
+	static init(params) {
+		if (params) {
+			Object.keys(params).forEach(v => {
+				Config[v] = params[v]
+			})
+		}
+	}
+}
+Config.init({
+				appName: 'hope',
+				CUSTOMERID: 'asdferfvwrestgvqer'
+})
+console.log('Config',Config)
+console.log('newConfig',(new Config).appName)
+
+// 总结：try catch 是捕获同步任务的，异步
+
+</script>
+</html>
