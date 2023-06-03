@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="cvs" width="500" height="300"></canvas>
+    <script>
+      let canvas = document.getElementById("cvs");
+
+      let context = canvas.getContext("2d");
+      let isDrawing = false;
+      canvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        console.log("isDrawingmousedown", isDrawing);
+
+        context.moveTo(e.pageX, e.pageY);
+      });
+      canvas.addEventListener("mousemove", (e) => {
+        // console.log("isDrawing", isDrawing);
+        console.log("isDrawingmousemove", isDrawing);
+
+        if (isDrawing) {
+          context.lineTo(e.pageX, e.pageY);
+          context.stroke();
+        }
+      });
+      canvas.addEventListener("mouseup", (e) => {
+        isDrawing = false;
+      });
+    </script>
+  </body>
+</html>

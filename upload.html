@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<body>
+  <input type="file">
+  <button>upload</button>
+
+  <script>
+    const btnEl =document.querySelector('button')
+    const inputEl =document.querySelector('input')
+    btnEl.onclick =(e)=>{
+      console.dir(inputEl.files[0]);
+
+      const formData = new FormData()
+      formData.set('photo',inputEl.files[0])
+      // 发起一个post请求
+      axios({
+        method: 'post',
+        url: 'http://localhost:8000/upload',
+        data: formData,
+        headers:{
+          'Content-type':'multipart/form-data'
+        }
+      });
+
+    }
+  </script>
+</body>
+</html>

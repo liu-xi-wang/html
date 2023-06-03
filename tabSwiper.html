@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<style>
+  .father{
+	width:100%;
+	overflow:hidden;
+  }
+  .sun{
+    display:flex;
+	transition:all 1s;
+  }
+  .item{
+    border:1px solid orange;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <button @click="goForLeft">向左</button><button @click="goForRight">向右</button>
+  <div class="father">
+	<div class="sun" ref="sun">
+      <div v-for="(item,index) in iteArr" class="item" :ref="'item'+index">{{item.name}}</div>
+	</div>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+	current:0,
+	iteArr:[
+	  {name:'tab1111'},{name:'tab2222'},{name:'tab3333'},{name:'tab4444'},{name:'tab5555'},{name:'tab6666'}
+	]
+  },
+  methods:{
+	goForLeft(){
+	  if(this.current==this.iteArr.length-1){
+	    return
+	  }
+	  this.current+=1
+	  const currentItem='item'+this.current
+	  this.$refs.sun.style.transform = `translateX(-${this.$refs[currentItem][0].offsetLeft}px)`
+	},
+	goForRight(){
+	  if(this.current==0){
+		return
+	  }
+	  this.current-=1
+	  const currentItem='item'+this.current
+	  this.$refs.sun.style.transform = `translateX(-${this.$refs[currentItem][0].offsetLeft}px)`		
+	}	
+  },
+  mounted(){
+    console.log('---测试ref是否生效',this.$refs.item1[0].offsetLeft)
+  }
+})
+</script>
+</body>
+
+</html>

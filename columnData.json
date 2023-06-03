@@ -1,0 +1,125 @@
+"columnData": {
+	"apiList": [], //逻辑处理配置
+	"treeConfig": {}, //分类模板配置
+	"searchList": [
+		{
+			//查询条件
+			"config": {
+				"byKey": "comInput",//组件的用来渲染右侧组件配置属性
+				"label": "单行输入",//组件的左侧标签
+				"showLabel": true,//是否显示组件标签
+				"tag": "el-input",//用来渲染组件的标签
+				"tagIcon": "icon-by icon-by-generator-input",//组件的icon
+				"required": false,//组件是否必填的标识
+				"layout": "colFormItem",//组件是纵向的还是横向的
+				"span": 24,//组件的姗格
+				"dragDisabled": false,//是否允许组件拖拽
+				"regList": [],//组件的正则校验
+				"trigger": "blur",//组件的触发规则
+				"noShow": false,
+				"defaultType": "",
+				"formId": 101,
+				"renderKey": 1676107683231
+			},
+			"slot": {
+				"prepend": "",
+				"append": ""
+			},
+			"placeholder": "请输入",
+			"style": {
+				"width": "100%"
+			},
+			"clearable": true,
+			"prefix-icon": "",
+			"suffix-icon": "",
+			"maxlength": null,
+			"show-word-limit": false,
+			"show-password": false,
+			"readonly": false,
+			"disabled": false,
+			"isScanInput": false,
+			"defaultType": "custom",
+			"linkData": {
+				"modelId": "",
+				"type": "custom",
+				"filtersRelation": "and",
+				"filters": [
+					{
+						"condition": "Equal",
+						"ext": true,
+						"label": "",
+						"param": "",
+						"value": {
+							"id": "",
+							"label": "",
+							"type": ""
+						},
+						"valueFrom": "",
+						"filterId": "filter1676107683231"
+					}
+				],
+				"param": ""
+			},
+			"vModel": "comInputField101",
+			"value": "",
+			"searchType": 2
+		}
+	], // 查询条件
+	"columnList": [
+		{
+			// 字段列表
+			"label": "单行输入",
+			"prop": "comInputField101",
+			"align": "left",
+			"byKey": "comInput",
+			"sortable": false,
+			"width": 0
+		}
+	],
+	"type": 1, //1、分页列表 2、分类设置3、分组设置
+	"defaultSidx": "", // 默认排序字段
+	"sort": "desc", // 排序类型
+	"hasPage": true, // 列表分页
+	"pageSize": 20, // 分页条数
+	"treeTitle": "左侧标题", // 树形标题
+	"treeDataSource": "dictionary", // 树形数据来源
+	"treeDictionary": "", //数据字典
+	"treeRelation": "", // 关联字段
+	"treePropsUrl": "", // 数据选择
+	"treePropsValue": "id", // 主键字段
+	"treePropsChildren": "children", // 子级字段
+	"treePropsLabel": "fullName", // 显示字段
+	"groupField": "", // 分组字段
+	"useColumnPermission": false,//列表权限
+	"useBtnPermission": false,//按钮权限
+	"useDataPermission": false,//数据权限
+	"btnsList": [
+		{
+			"value": "add",
+			"icon": "el-icon-plus",
+			"label": "新增",
+			"dataMethod": "default",//查询提交提交方式
+			"method": "get",
+			"apiPoint": ""//接口地址
+		}
+	], // 按钮
+	"columnBtnsList": [
+		{
+			"value": "edit",
+			"icon": "el-icon-edit",
+			"label": "编辑",
+			"dataMethod": "default",//查询提交提交方式
+			"method": "get",
+			"apiPoint": ""//接口地址
+		},
+		{
+			// 列按钮
+			"value": "remove",
+			"icon": "el-icon-delete",
+			"label": "删除",
+			"dataMethod": "default",//查询提交提交方式
+			"method": "get",
+			"apiPoint": ""//接口地址
+		}
+	]
+},

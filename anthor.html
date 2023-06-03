@@ -63,4 +63,53 @@
     <div class="box" id="box3">模块三</div>
     <div class="box" id="box4">模块四</div>
   </body>
+  <script>
+    // 冒泡排序
+    const arr = [1, 2, 3, 1234, 12, 341];
+    // 第一步确定轮数 ，这样一来最小的数就放在第一个，然后依次放在第二个。。。
+
+    // arr.forEach((item) => {
+    //   arr.forEach((item, index) => {
+    //     if (arr[index] > arr[index + 1]) {
+    //       const temp = arr[index];
+    //       arr[index] = arr[index + 1];
+    //       arr[index + 1] = temp;
+    //     }
+    //   });
+    // });
+    // console.log("arr", arr);
+
+    // let newArr = [];
+    // arr.forEach((item, index) => {
+    //   console.log();
+    //   if (!newArr.includes(item)) {
+    //     newArr.push(item);
+    //   }
+    // });
+    // console.log(newArr);
+
+    // arr.forEach((item, index) => {
+    //   const cache = [];
+    //   arr.forEach((i, d) => {
+    //     if (i === item && cache.length <= 0) {
+    //       cache.push(i);
+    //     } else if (i === item) {
+    //       arr.splice(index, 1);
+    //     }
+    //   });
+    // });
+    // console.log(arr);
+
+    for (let i = 0; i < arr.length; i++) {
+      console.log("1", arr[i]);
+
+      for (let j = i + 1; j < arr.length; j++) {
+        console.log("2", arr[j]);
+        if (arr[i] == arr[j]) {
+          arr.splice(j, 1);
+        }
+      }
+      console.log("-----------");
+    }
+  </script>
 </html>
