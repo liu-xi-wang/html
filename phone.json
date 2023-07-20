@@ -1,0 +1,42 @@
+[
+  {
+    "brand": "华为1",
+    "title": "华为mate",
+    "price": 3399,
+    "score": 8.4,
+    "voteCnt": 125,
+    "url": "http://detail.zol.com.cn//cell_phone/index1165672.shtml",
+    "pid": "2154563"
+    
+  },
+  {
+    "brand": "华为2",
+    "title": "华为mate",
+    "price": 3399,
+    "score": 8.4,
+    "voteCnt": 125,
+    "url": "http://detail.zol.com.cn//cell_phone/index1165672.shtml",
+    "pid": "2154563"
+    
+  },
+  {
+    "brand": "华为3",
+    "title": "华为mate",
+    "price": 3399,
+    "score": 8.4,
+    "voteCnt": 125,
+    "url": "http://detail.zol.com.cn//cell_phone/index1165672.shtml",
+    "pid": "1154563"
+    
+  },
+  {
+    "brand": "华为4",
+    "title": "华为mate",
+    "price": 3399,
+    "score": 8.4,
+    "voteCnt": 125,
+    "url": "http://detail.zol.com.cn//cell_phone/index1165672.shtml",
+    "pid": "1154563"
+    
+  }
+]

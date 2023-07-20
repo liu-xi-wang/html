@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/liu-xi-wang/html#readme",
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "mysql2": "^3.5.0"
   }
 }
