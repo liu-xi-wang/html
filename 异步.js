@@ -21,3 +21,5 @@ const statement = `SELECT * FROM products WHERE brand = ?;`
 connectionPool.promise().execute(statement, ['苹果']).then(res => {
   console.log(res);
 })
+
+
